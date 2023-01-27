@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>My App!</Text>
+      <Text>My!</Text>
     </View>
   );
 }
@@ -11,8 +11,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "333",
+    backgroundColor: "f2f9f2",
     alignItems: "center",
     justifyContent: "center",
   },
 });
+
