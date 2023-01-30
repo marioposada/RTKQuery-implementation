@@ -1,12 +1,17 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
 import { styles } from "./styles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
+  const onHandlePress = () => {
+    navigation.navigate("Details");
+  };
+
   return (
-    <div style={styles.container}>
-      <Text style={styles.text}>Home Screen</Text>
-    </div>
+    <View style={styles.container}>
+      <Text style={styles.text}>Implementacion RTKQuery</Text>
+      <Button title="Go to Details" onPress={onHandlePress} />
+    </View>
   );
 };
 
