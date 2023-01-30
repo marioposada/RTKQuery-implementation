@@ -9,7 +9,7 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Implementacion RTKQuery</Text>
+      <Text style={styles.text}>Boilerplate</Text>
       <Button title="Go to Details" onPress={onHandlePress} />
     </View>
   );

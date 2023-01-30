@@ -7,7 +7,7 @@ import {data} from "../../../constants/data";
 const Details = ({ navigation}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Details Character</Text>
+      <Text style={styles.text}>boilerplate</Text>
       <FlatList
         data={data}
         keyExtractor={(item) => item.id.toString()}
