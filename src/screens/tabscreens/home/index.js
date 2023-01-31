@@ -13,7 +13,7 @@ const Home = ({ navigation }) => {
   return (
     <>
       {isLoading && <Text>Loading...</Text>}
-      {error && <Text>Error</Text>}
+
       <View style={styles.container}>
         <Text style={styles.text}>Boilerplate</Text>
         <Button title="Go to Details" onPress={onHandlePress} />
