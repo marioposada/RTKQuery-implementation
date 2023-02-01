@@ -1,4 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSelector,createEntityAdapter} from '@reduxjs/toolkit'
+
+const marvelAdapter = createEntityAdapter()
+
+const initialState = marvelAdapter.getInitialState()
 
 export const marvelSlice = createSlice({
   name: "marvel",
