@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, Image, ScrollView } from "react-native";
 import { styles } from "./styles";
 import { useGetCharactersQuery } from "./../../../store/services/marvelApi";
 
@@ -10,14 +10,31 @@ const Home = ({ navigation }) => {
 
   const { data, error, isLoading } = useGetCharactersQuery();
 
+  const characters = data?.data.results.map((character) => {
+    return (
+      <View key={character.id}>
+        <Text>{character.name}</Text>
+        <Image
+          style={{ width: 30, height: 30 }}
+          source={{
+            uri: `${character.thumbnail.path}.${character.thumbnail.extension}`,
+          }}
+        />
+      </View>
+    );
+  });
+
   return (
     <>
       {isLoading && <Text>Loading...</Text>}
-
-      <View style={styles.container}>
-        <Text style={styles.text}>Boilerplate</Text>
-        <Button title="Go to Details" onPress={onHandlePress} />
-      </View>
+      {error && <Text>Error: {error}</Text>}
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={styles.text}>Boilerplate</Text>
+          <Button title="Go to Details" onPress={onHandlePress} />
+          {characters}
+        </View>
+      </ScrollView>
     </>
   );
 };
