@@ -13,7 +13,10 @@ export const extendedMarvelSlice = marvelApi.injectEndpoints({
         return {
           url: `characters?ts=${apiParams.ts}&apikey=${apiParams.apikey}&hash=${apiParams.hash}`,
         };
+        
       }
+    }),
+      return marvelAdapter.setAll(initialState, data?.data.results)
     }),
   }),
   overrideExisting: false,
