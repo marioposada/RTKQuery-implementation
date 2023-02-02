@@ -14,8 +14,6 @@ export const extendedMarvelSlice = marvelApi.injectEndpoints({
           url: `characters?ts=${apiParams.ts}&apikey=${apiParams.apikey}&hash=${apiParams.hash}`,
         };
       },
-
-      providesTags: ["Marvel"],
     }),
   }),
 });
